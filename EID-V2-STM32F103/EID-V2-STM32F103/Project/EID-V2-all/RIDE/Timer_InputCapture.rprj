@@ -1,0 +1,4 @@
+
+<Project Header="Project 'Timer_InputCapture'" Path=".\Timer_InputCapture.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="Timer_InputCapture" >
+	<ApplicationBuild Header="Timer_InputCapture" Extern=".\Timer_InputCapture.rapp" Path=".\Timer_InputCapture.rapp" OutputFile=".\STM3210E-EVAL\Timer_InputCapture.elf" sate="98" Config="STM3210E-EVAL" />
+</Project>
