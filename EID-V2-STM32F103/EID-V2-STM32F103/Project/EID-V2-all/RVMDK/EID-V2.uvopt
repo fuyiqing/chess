@@ -131,7 +131,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name></Name>
+          <Name>/</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -160,22 +160,6 @@
           <Filename></Filename>
           <ExecCommand></ExecCommand>
           <Expression>0x08000000</Expression>
-        </Bp>
-        <Bp>
-          <Number>1</Number>
-          <Type>0</Type>
-          <LineNumber>357</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>134226056</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>F:\驴脦鲁脤\脟露脠毛脢陆脢碌脩茅\麓贸脳梅脪碌\chess\EID-V2-STM32F103\EID-V2-STM32F103\Project\EID-V2-all\src\main.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>
@@ -263,6 +247,16 @@
           <count>16</count>
           <WinNumber>1</WinNumber>
           <ItemText>count</ItemText>
+        </Ww>
+        <Ww>
+          <count>17</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>str</ItemText>
+        </Ww>
+        <Ww>
+          <count>18</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>receiveMove</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
@@ -945,7 +939,7 @@
 
   <Group>
     <GroupName>CMSIS</GroupName>
-    <tvExp>1</tvExp>
+    <tvExp>0</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

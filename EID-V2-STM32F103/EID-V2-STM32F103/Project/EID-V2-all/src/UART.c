@@ -1,9 +1,9 @@
 /***********************************************************************
-ÎÄ¼þÃû³Æ£ºLED.C
-¹¦    ÄÜ£ºled  IO³õÊ¼»¯
-±àÐ´Ê±¼ä£º2013.4.25
-±à Ð´ ÈË£º
-×¢    Òâ£º
+ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½Æ£ï¿½LED.C
+ï¿½ï¿½    ï¿½Ü£ï¿½led  IOï¿½ï¿½Ê¼ï¿½ï¿½
+ï¿½ï¿½Ð´Ê±ï¿½ä£º2013.4.25
+ï¿½ï¿½ Ð´ ï¿½Ë£ï¿½
+×¢    ï¿½â£º
 ***********************************************************************/
 #include "stm32f10x.h"
 #include <stm32f10x_usart.h>
@@ -13,9 +13,9 @@ void RS232_Configuration(void)
 	GPIO_InitTypeDef GPIO_InitStructure;
  	USART_InitTypeDef USART_InitStructure; 
 	//NVIC_InitTypeDef NVIC_InitStructure1;
-	//Òý½ÅÊ±ÖÓ
+	//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
-	//´®¿ÚÊ±ÖÓ
+	//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
 
 
@@ -32,7 +32,7 @@ void RS232_Configuration(void)
   GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
   GPIO_Init(GPIOA, &GPIO_InitStructure);
 	
-		//´®¿Ú1³õÊ¼»¯
+		//ï¿½ï¿½ï¿½ï¿½1ï¿½ï¿½Ê¼ï¿½ï¿½
 	USART_InitStructure.USART_BaudRate = 9600;
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;
@@ -42,9 +42,9 @@ void RS232_Configuration(void)
 	USART_Init(USART1, &USART_InitStructure);
 
 	USART_ITConfig(USART1, USART_IT_RXNE, ENABLE);
-//	USART_ITConfig(USART1, USART_IT_IDLE, ENABLE);//¿ÕÏÐÖÐ¶Ï
+//	USART_ITConfig(USART1, USART_IT_IDLE, ENABLE);//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	USART_Cmd(USART1, ENABLE);
-	USART_ClearITPendingBit(USART1, USART_IT_TC);//Çå³ýÖÐ¶ÏTCÎ»
+	USART_ClearITPendingBit(USART1, USART_IT_TC);//ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½TCÎ»
 	
 }
 
@@ -53,10 +53,10 @@ void RS485_Configuration()
 	GPIO_InitTypeDef GPIO_InitStructure;
  	USART_InitTypeDef USART_InitStructure; 
 	//NVIC_InitTypeDef NVIC_InitStructure1;
-	//Òý½ÅÊ±ÖÓ	
+	//ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½	
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3 , ENABLE); 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD|RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);
-	//´®¿Ú3³õÊ¼»¯
+	//ï¿½ï¿½ï¿½ï¿½3ï¿½ï¿½Ê¼ï¿½ï¿½
 	
   /*
   *  USART3_TX -> PB10 , USART3_RX ->	PB11, RS485_DIR -> PD13
@@ -85,9 +85,9 @@ void RS485_Configuration()
 
 	USART_Init(USART3, &USART_InitStructure);
 	USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);
-//	USART_ITConfig(USART3, USART_IT_IDLE, ENABLE);//¿ÕÏÐÖÐ¶Ï
+//	USART_ITConfig(USART3, USART_IT_IDLE, ENABLE);//ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	USART_Cmd(USART3, ENABLE);
-	USART_ClearITPendingBit(USART3, USART_IT_TC);//Çå³ýÖÐ¶ÏTCÎ»	
+	USART_ClearITPendingBit(USART3, USART_IT_TC);//ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½TCÎ»	
 	
 }
 void NVIC_Configuration(void)
@@ -115,13 +115,13 @@ void NVIC_Configuration(void)
 	NVIC_Init(&NVIC_InitStructure); 
 }
 /***********************************************************************
-º¯ÊýÃû³Æ£ºvoid USART1_IRQHandler(void) 
-¹¦    ÄÜ£ºÍê³ÉSCIµÄÊý¾ÝµÄ½ÓÊÕ£¬²¢×ö±êÊ¶
-ÊäÈë²ÎÊý£º
-Êä³ö²ÎÊý£º
-±àÐ´Ê±¼ä£º2012.11.22
-±à Ð´ ÈË£º
-×¢    Òâ  RS485ÓÃµÄÊÇUSART1.
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½void USART1_IRQHandler(void) 
+ï¿½ï¿½    ï¿½Ü£ï¿½ï¿½ï¿½ï¿½SCIï¿½ï¿½ï¿½ï¿½ï¿½ÝµÄ½ï¿½ï¿½Õ£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¶
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½Ð´Ê±ï¿½ä£º2012.11.22
+ï¿½ï¿½ Ð´ ï¿½Ë£ï¿½
+×¢    ï¿½ï¿½  RS485ï¿½Ãµï¿½ï¿½ï¿½USART1.
 ***********************************************************************/
 
 
@@ -137,7 +137,7 @@ void USART1_IRQHandler(void)
 	if (USART_GetITStatus(USART1, USART_IT_TXE) != RESET) 
 	{
         USART_ClearITPendingBit(USART1, USART_IT_TXE);           /* Clear the USART transmit interrupt                  */
-  }	
+  	}	
 }
 
 void RS232SendByte(char data)

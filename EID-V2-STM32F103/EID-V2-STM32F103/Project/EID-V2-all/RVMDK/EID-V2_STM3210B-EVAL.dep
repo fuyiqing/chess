@@ -1,5 +1,5 @@
 Dependencies for Project 'EID-V2', Target 'STM3210B-EVAL': (DO NOT MODIFY !)
-F (..\src\main.c)(0x61C74606)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
+F (..\src\main.c)(0x61C7EC3F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\main.o --omf_browse .\obj\main.crf --depend .\obj\main.d)
 I (..\..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h)(0x61C5277A)
 I (..\..\..\Libraries\CMSIS\Core\CM3\core_cm3.h)(0x61C5277A)
 I (D:\keil511\keil\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -11,8 +11,11 @@ I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61C5277A
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x61C5277A)
 I (..\src\delay.h)(0x61C55C2D)
 I (..\src\sys.h)(0x61C5277A)
-I (..\src\lcd.h)(0x61C6E024)
+I (..\src\lcd.h)(0x61C7D7FF)
 I (D:\keil511\keil\ARM\ARMCC\include\stdlib.h)(0x53463A44)
+I (..\src\UART.h)(0x61C7C99C)
+I (D:\keil511\keil\ARM\ARMCC\include\stdio.h)(0x53463A44)
+I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61C5277A)
 F (..\src\LED.c)(0x61C55753)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\led.o --omf_browse .\obj\led.crf --depend .\obj\led.d)
 I (..\..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h)(0x61C5277A)
 I (..\..\..\Libraries\CMSIS\Core\CM3\core_cm3.h)(0x61C5277A)
@@ -43,7 +46,7 @@ I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61C5277
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61C5277A)
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61C5277A)
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x61C5277A)
-F (..\src\UART.c)(0x61C55D04)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\uart.o --omf_browse .\obj\uart.crf --depend .\obj\uart.d)
+F (..\src\UART.c)(0x61C7CAB9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\uart.o --omf_browse .\obj\uart.crf --depend .\obj\uart.d)
 I (..\..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h)(0x61C5277A)
 I (..\..\..\Libraries\CMSIS\Core\CM3\core_cm3.h)(0x61C5277A)
 I (D:\keil511\keil\ARM\ARMCC\include\stdint.h)(0x53463A44)
@@ -54,8 +57,8 @@ I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61C5277A
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61C5277A)
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\misc.h)(0x61C5277A)
 I (..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61C5277A)
-F (..\src\LCD.c)(0x61C6E68F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\lcd.o --omf_browse .\obj\lcd.crf --depend .\obj\lcd.d)
-I (..\src\lcd.h)(0x61C6E024)
+F (..\src\LCD.c)(0x61C7D817)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I..\inc -I..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I..\..\..\Libraries\CMSIS\Core\CM3-I D:\keil511\keil\ARM\RV31\INC-I D:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include-I D:\keil511\keil\ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include-DSTM32F10X_HD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o .\obj\lcd.o --omf_browse .\obj\lcd.crf --depend .\obj\lcd.d)
+I (..\src\lcd.h)(0x61C7D7FF)
 I (..\src\sys.h)(0x61C5277A)
 I (..\..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h)(0x61C5277A)
 I (..\..\..\Libraries\CMSIS\Core\CM3\core_cm3.h)(0x61C5277A)

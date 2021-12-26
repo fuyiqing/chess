@@ -10,7 +10,7 @@ u16 POINT_COLOR = WHITE; //������ɫ
 u16 BACK_COLOR = BROWN;  //����ɫ
 u16 CHESS_COLOR = BLACK;  //������ɫ
 
-int chessTable[5][5] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+u8 chessTable[5][5] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 u8 chessFlag = 0;
 
 _lcd_dev lcddev;

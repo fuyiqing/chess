@@ -1,10 +1,13 @@
 #include "stm32f10x.h"
 #include "delay.h"
 #include "lcd.h"
+#include "UART.h"
+#include "stdio.h"
+#include "stm32f10x_usart.h"
 
 extern u8 chessFlag;
 extern u32 xScreen, yScreen;
-extern int chessTable[5][5];
+extern u8 chessTable[5][5];
 
 void BoardInit(void);
 void drawChessBoard(void);
@@ -94,6 +97,7 @@ void win(int flag);
 int pastChessBoard[5][5];
 int turn = 1;
 int endFlag;
+
 int main(void)
 {
 	BoardInit();
@@ -105,8 +109,58 @@ int main(void)
 	int chosen = 0;
 	int chosenChess[2] = {0, 0};
 	int chosenPos[2] = {0, 0};
+	int sendUARTFlag = 0;
+	u8 receiveMove[5];
+	u8 receiveCount = 0;
 	while (1)
 	{
+		if(turn == 2 && endFlag == 0)
+		{
+			if(sendUARTFlag == 0)
+			{
+				char str[26];
+				for(int i = 0; i < 5; i++)
+				{
+					for(int j = 0; j < 5; j++)
+					{
+						str[i*5+j] = chessTable[i][j] + 48;
+					}
+				}
+				str[25] = '\n';
+				for(int i = 0; i < 26; i++)
+				{
+					while(USART_GetFlagStatus(USART1, USART_FLAG_TXE) == RESET);	 
+					RS232SendByte(str[i]);
+				}
+				while(USART_GetFlagStatus(USART1, USART_FLAG_TC) == RESET);	 
+				sendUARTFlag = 1;
+				RS232InData = 0;
+				receiveCount = 0;
+			}
+			if(sendUARTFlag == 1 && RS232InData != 0)
+			{
+				receiveMove[receiveCount] = RS232InData;
+				receiveCount++;
+				RS232InData = 0;
+			}
+			if(strlen(receiveMove) == 4)
+			{
+				CHESS_COLOR = WHITE;
+				u8 x0 = receiveMove[0] - 48;
+				u8 y0 = receiveMove[1] - 48;
+				u8 x1 = receiveMove[2] - 48;
+				u8 y1 = receiveMove[3] - 48;
+				LCD_Rm_Circle_Chess((y0+1)*40, (x0+1)*40, 15);
+				chessTable[x0][y0] = 0;
+				LCD_Draw_Circle_Chess((y1+1)*40, (x1+1)*40, 15);
+				chessTable[x1][y1] = 2;
+				for(int i = 0; i < 5; i++) receiveMove[i] = '\0';
+				receiveCount = 0;
+				sendUARTFlag = 0;
+				turn = (turn % 2) + 1;
+			}
+			judge();
+		}
 		if (touchFlag >= 1)
 		{
 			getXY(pos);
@@ -116,7 +170,7 @@ int main(void)
 				chosen = 0;
 				turn = 1;
 			}
-			else if(endFlag == 0 && isChessBoard(pos, xy, ChessPos))
+			else if(turn == 1 && endFlag == 0 && isChessBoard(pos, xy, ChessPos))
 			{
 				if(chessTable[xy[0]][xy[1]] == turn)
 				{
@@ -185,7 +239,7 @@ int main(void)
 					chosen = 0;
 				}
 			}
-			//delay_ms(200);
+			delay_ms(200);
 			touchFlag = 0;
 		}
 		//		if (chessFlag == 1)
@@ -205,6 +259,8 @@ void BoardInit(void)
 {
 	SystemInit();
 	delay_init();
+	RS232_Configuration();
+	NVIC_Configuration();
 	LCD_Configuration();
 	LCD_Init();
 	TOUCH_SCREEN_INIT();

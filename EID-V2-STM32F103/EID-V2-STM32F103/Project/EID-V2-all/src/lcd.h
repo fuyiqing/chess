@@ -101,7 +101,7 @@ extern u16  BACK_COLOR; //背景颜色.默认为白色
 extern u16  CHESS_COLOR;
 
 extern u16 	touchFlag;
-extern int chessTable[5][5];
+extern u8 chessTable[5][5];
 
 ////////////////////////////////////////////////////////////////////
 //-----------------LCD端口定义---------------- 
