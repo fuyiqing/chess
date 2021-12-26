@@ -131,7 +131,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name>/</Name>
+          <Name></Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -257,6 +257,11 @@
           <count>18</count>
           <WinNumber>1</WinNumber>
           <ItemText>receiveMove</ItemText>
+        </Ww>
+        <Ww>
+          <count>19</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>sendUARTFlag</ItemText>
         </Ww>
       </WatchWindow1>
       <Tracepoint>
