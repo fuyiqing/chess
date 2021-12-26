@@ -459,10 +459,11 @@ Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\obj\st
 ARM Macro Assembler    Page 8 
 
 
-artup_stm32f10x_md.d -o.\obj\startup_stm32f10x_md.o -IE:\Keil\ARM\RV31\INC -IE:
-\Keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include -IDevice\Include --predefine="__MI
-CROLIB SETA 1" --list=.\list\startup_stm32f10x_md.lst ..\..\..\Libraries\CMSIS\
-Core\CM3\startup\arm\startup_stm32f10x_md.s
+artup_stm32f10x_md.d -o.\obj\startup_stm32f10x_md.o -ID:\keil511\keil\ARM\RV31\
+INC -ID:\keil511\keil\ARM\PACK\ARM\CMSIS\4.1.0\CMSIS\Include -ID:\keil511\keil\
+ARM\PACK\Keil\STM32F1xx_DFP\1.0.2\Device\Include --predefine="__MICROLIB SETA 1
+" --list=.\list\startup_stm32f10x_md.lst ..\..\..\Libraries\CMSIS\Core\CM3\star
+tup\arm\startup_stm32f10x_md.s
 
 
 

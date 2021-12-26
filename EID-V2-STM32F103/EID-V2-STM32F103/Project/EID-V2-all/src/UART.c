@@ -12,7 +12,7 @@ void RS232_Configuration(void)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
  	USART_InitTypeDef USART_InitStructure; 
-	NVIC_InitTypeDef NVIC_InitStructure1;
+	//NVIC_InitTypeDef NVIC_InitStructure1;
 	//引脚时钟
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);
 	//串口时钟
@@ -52,7 +52,7 @@ void RS485_Configuration()
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
  	USART_InitTypeDef USART_InitStructure; 
-	NVIC_InitTypeDef NVIC_InitStructure1;
+	//NVIC_InitTypeDef NVIC_InitStructure1;
 	//引脚时钟	
 	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART3 , ENABLE); 	
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD|RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE);

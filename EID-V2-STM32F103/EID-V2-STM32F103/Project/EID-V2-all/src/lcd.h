@@ -98,6 +98,10 @@ extern _lcd_dev lcddev;	//管理LCD重要参数
 //LCD的画笔颜色和背景色	   
 extern u16  POINT_COLOR;//默认红色    
 extern u16  BACK_COLOR; //背景颜色.默认为白色
+extern u16  CHESS_COLOR;
+
+extern u16 	touchFlag;
+extern int chessTable[5][5];
 
 ////////////////////////////////////////////////////////////////////
 //-----------------LCD端口定义---------------- 
@@ -146,7 +150,7 @@ extern u16  BACK_COLOR; //背景颜色.默认为白色
 
 //画笔颜色
 #define WHITE         	 0xFFFF
-#define BLACK         	 0x0000	  
+#define BLACK         	 0x0000
 #define BLUE         	 0x001F  
 #define BRED             0XF81F
 #define GRED 			 0XFFE0
@@ -182,6 +186,7 @@ void LCD_Fast_DrawPoint(u16 x,u16 y,u16 color);								//快速画点
 u16  LCD_ReadPoint(u16 x,u16 y); 											//读点 
 void LCD_Draw_Circle(u16 x0,u16 y0,u8 r);					    			//画圆
 void LCD_DrawLine(u16 x1, u16 y1, u16 x2, u16 y2);							//画线
+void My_DrawLine(int x0, int y0, int x1, int y1, u16 color);
 void LCD_DrawRectangle(u16 x1, u16 y1, u16 x2, u16 y2);		   				//画矩形
 void LCD_Fill(u16 sx,u16 sy,u16 ex,u16 ey,u16 color);		   				//填充单色
 void LCD_Color_Fill(u16 sx,u16 sy,u16 ex,u16 ey,u16 *color);				//填充指定颜色
@@ -197,6 +202,16 @@ void LCD_WriteRAM(u16 RGB_Code);
 void LCD_Scan_Dir(u8 dir);									//设置屏扫描方向
 void LCD_Display_Dir(u8 dir);								//设置屏幕显示方向
 void LCD_Set_Window(u16 sx,u16 sy,u16 width,u16 height);	//设置窗口	
+
+void LCD_Configuration(void);
+void TOUCH_SCREEN_INIT(void);
+void TOUCH_INT_config(void);
+void TOUCH_INT_EXIT_Init(void);
+void TOUCH_InterruptConfig(void);
+void TouchScreen(void);
+void LCD_Draw_Circle_Chess(u16 x0,u16 y0,u8 r);
+void Touch_test(void);
+void LCD_Rm_Circle_Chess(u16 x0,u16 y0,u8 r);
 
 //写数据函数
 #define LCD_WR_DATA(data){\
@@ -226,16 +241,3 @@ LCD_CS_SET;\
 #define SSD_VPS (SSD_VER_BACK_PORCH)
 						  		 
 #endif
-
-
-
-
-
-
-
-
-
-
-
-
-
